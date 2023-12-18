@@ -1,32 +1,32 @@
 "use strict";
 
 class StringBuilder {
-  #initialValue;
+  #value;
 
-  constructor(initialValue) {
-    this.#initialValue = initialValue;
+  constructor(value) {
+    this.#value = value;
   }
 
   getValue() {
-    return this.#initialValue;
+    return this.#value;
   }
 
-  padStart(value) {
-    return (this.#initialValue = this.#initialValue.padStart(
-      this.#initialValue.length + value.length,
-      value
+  padStart(str) {
+    return (this.#value = this.#value.padStart(
+      this.#value.length + str.length,
+      str
     ));
   }
 
-  padEnd(value) {
-    return (this.#initialValue = this.#initialValue.padEnd(
-      this.#initialValue.length + value.length,
-      value
+  padEnd(str) {
+    return (this.#value = this.#value.padEnd(
+      this.#value.length + str.length,
+      str
     ));
   }
 
-  padBoth(value) {
-    return (this.#initialValue = value + this.#initialValue + value);
+  padBoth(str) {
+    return (this.#value = str + this.#value + str);
   }
 }
 
